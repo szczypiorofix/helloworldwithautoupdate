@@ -12,10 +12,7 @@ function App(): React.JSX.Element {
         Build an Electron app with <span className="react">React</span>
         &nbsp;and <span className="ts">TypeScript</span>
         <div>
-          First version evah ! Version 1.0.1 !!! Autoupdater works!
-        </div>
-        <div>
-          Is it working now??? And now??
+          Another version - just after update !
         </div>
       </div>
       <p className="tip">
