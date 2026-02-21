@@ -39,14 +39,22 @@ electron.app.whenReady().then(() => {
   electron.app.on("activate", function() {
     if (electron.BrowserWindow.getAllWindows().length === 0) createWindow();
   });
-  electronUpdater.autoUpdater.on("update-downloaded", (info) => {
+  electronUpdater.autoUpdater.on("error", (err) => {
+    electron.dialog.showErrorBox("Błąd aktualizacji", err == null ? "nieznany błąd" : (err.stack || err).toString());
+  });
+  electronUpdater.autoUpdater.on("update-available", () => {
+    electron.dialog.showMessageBox({ message: "Znalazłem aktualizację! Pobieram w tle..." });
+  });
+  electronUpdater.autoUpdater.on("update-not-available", () => {
+    electron.dialog.showMessageBox({ message: "Brak aktualizacji. Masz najnowszą wersję." });
+  });
+  electronUpdater.autoUpdater.on("update-downloaded", () => {
     electron.dialog.showMessageBox({
       type: "info",
-      title: "Dostępna aktualizacja",
-      message: "Nowa wersja aplikacji została pobrana. Aplikacja zostanie zrestartowana, aby zainstalować aktualizację.",
-      buttons: ["Zrestartuj teraz"]
+      title: "Aktualizacja gotowa",
+      message: "Pobrano nową wersję. Aplikacja zostanie zrestartowana.",
+      buttons: ["Zrestartuj"]
     }).then(() => {
-      console.log("autoupdater info", info);
       setImmediate(() => electronUpdater.autoUpdater.quitAndInstall());
     });
   });
