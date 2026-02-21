@@ -58,6 +58,7 @@ electron.app.whenReady().then(() => {
       setImmediate(() => electronUpdater.autoUpdater.quitAndInstall());
     });
   });
+  electronUpdater.autoUpdater.checkForUpdatesAndNotify();
 });
 electron.app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
