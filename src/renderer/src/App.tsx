@@ -13,7 +13,7 @@ function App(): React.JSX.Element {
         &nbsp;and <span className="ts">TypeScript</span>
         <div>
           Another version - just after update !
-          New version - Version 1.0.8
+          New version - Version 1.0.9 ??
         </div>
       </div>
       <p className="tip">
