@@ -11,6 +11,9 @@ function App(): React.JSX.Element {
       <div className="text">
         Build an Electron app with <span className="react">React</span>
         &nbsp;and <span className="ts">TypeScript</span>
+        <div>
+          First verion evah !
+        </div>
       </div>
       <p className="tip">
         Please try pressing <code>F12</code> to open the devTool
