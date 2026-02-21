@@ -15,7 +15,7 @@ function App(): React.JSX.Element {
           First version evah ! Version 1.0.1 !!! Autoupdater works!
         </div>
         <div>
-          Is it working now???
+          Is it working now??? And now??
         </div>
       </div>
       <p className="tip">
