@@ -84,7 +84,7 @@ app.whenReady().then(() => {
       setImmediate(() => autoUpdater.quitAndInstall());
     });
   });
-
+  autoUpdater.checkForUpdatesAndNotify();
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
