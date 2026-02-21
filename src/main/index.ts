@@ -62,15 +62,25 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 
-  autoUpdater.on('update-downloaded', (info) => {
+  autoUpdater.on('error', (err) => {
+    dialog.showErrorBox('Błąd aktualizacji', err == null ? "nieznany błąd" : (err.stack || err).toString());
+  });
+
+  autoUpdater.on('update-available', () => {
+    dialog.showMessageBox({ message: 'Znalazłem aktualizację! Pobieram w tle...' });
+  });
+
+  autoUpdater.on('update-not-available', () => {
+    dialog.showMessageBox({ message: 'Brak aktualizacji. Masz najnowszą wersję.' });
+  });
+
+  autoUpdater.on('update-downloaded', () => {
     dialog.showMessageBox({
       type: 'info',
-      title: 'Dostępna aktualizacja',
-      message: 'Nowa wersja aplikacji została pobrana. Aplikacja zostanie zrestartowana, aby zainstalować aktualizację.',
-      buttons: ['Zrestartuj teraz']
+      title: 'Aktualizacja gotowa',
+      message: 'Pobrano nową wersję. Aplikacja zostanie zrestartowana.',
+      buttons: ['Zrestartuj']
     }).then(() => {
-      // 3. Zainstaluj i uruchom ponownie
-      console.log('autoupdater info', info);
       setImmediate(() => autoUpdater.quitAndInstall());
     });
   });
