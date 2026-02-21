@@ -1,0 +1,61 @@
+{
+    "folders": [
+        {
+            "path": ".",
+        },
+    ],
+    "settings": {
+        "editor.fontFamily": "Noto Mono, monospace",
+        "editor.lineHeight": 17,
+        "editor.fontLigatures": true,
+        "editor.mouseWheelZoom": true,
+        "editor.cursorWidth": 7,
+        "editor.autoIndent": "full",
+        "editor.showUnused": true,
+        "editor.tabSize": 4,
+        "editor.cursorBlinking": "phase",
+        "files.autoGuessEncoding": false,
+        "files.encoding": "utf8",
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/node_modules": true,
+            "**/dist": true,
+        },
+        "eslint.alwaysShowStatus": true,
+        "eslint.format.enable": true,
+        "todohighlight.keywords": [
+            {
+                "text": "PART:",
+                "color": "#EEEEEE",
+                "backgroundColor": "green",
+                "overviewRulerColor": "green",
+            },
+            {
+                "text": "ADD:",
+                "color": "#111111",
+                "backgroundColor": "lightblue",
+                "overviewRulerColor": "lightblue",
+            },
+            {
+                "text": "WARN:",
+                "color": "#FF2211",
+                "backgroundColor": "#EEEEEE",
+                "overviewRulerColor": "#EEEEEE",
+            },
+        ],
+    },
+    "extensions": {
+        "recommendations": [
+            "dbaeumer.vscode-eslint",
+            "wayou.vscode-todo-highlight",
+            "dsznajder.es7-react-js-snippets",
+            "shd101wyy.markdown-preview-enhanced",
+            "aaron-bond.better-comments",
+            "donjayamanne.githistory",
+        ],
+    },
+}
